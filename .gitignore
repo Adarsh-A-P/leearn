@@ -1,0 +1,23 @@
+ECHO is on.
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environment
+venv/
+env/
+
+# Ignore database file (if using SQLite)
+db.sqlite3
+
+# Ignore Django secret key file (if stored separately)
+.env
+
+# Ignore static and media files (optional)
+staticfiles/
+media/
+
+# Ignore logs
+*.log
