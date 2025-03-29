@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+    <h2 class="mb-4">Buy Products</h2>
+    <div class="row">
+        <!-- Products Grid -->
+        <div class="col-md-9">
+            <div class="row">
+                {% for product in products %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="{% static 'images/product-placeholder.jpg' %}" class="card-img-top" alt="Product">
+                        <div class="card-body">
+                            <h5 class="card-title">Product Name</h5>
+                            <p class="card-text">Brief description of the product</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h5 mb-0">₹1,500</span>
+                                <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Filters Sidebar -->
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Filter Products</h5>
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Category</label>
+                            <select class="form-select">
+                                <option>All Categories</option>
+                                <option>Books</option>
+                                <option>Electronics</option>
+                                <option>Stationery</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Price Range</label>
+                            <select class="form-select">
+                                <option>Any Price</option>
+                                <option>Under ₹500</option>
+                                <option>₹500 - ₹2,000</option>
+                                <option>Above ₹2,000</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Apply Filters</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

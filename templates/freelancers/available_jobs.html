@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+    <h2 class="mb-4">Available Jobs</h2>
+    <div class="row">
+        <!-- Job Listings -->
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Web Development Project</h5>
+                    <p class="card-text">Looking for a skilled web developer to create a responsive website.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="badge bg-primary">₹15,000</span>
+                        <button class="btn btn-outline-primary">Apply Now</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more job cards here -->
+        </div>
+        
+        <!-- Filters -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Filter Jobs</h5>
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Category</label>
+                            <select class="form-select">
+                                <option>All Categories</option>
+                                <option>Web Development</option>
+                                <option>Design</option>
+                                <option>Writing</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Budget Range</label>
+                            <select class="form-select">
+                                <option>Any Budget</option>
+                                <option>Under ₹5,000</option>
+                                <option>₹5,000 - ₹15,000</option>
+                                <option>Above ₹15,000</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Apply Filters</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

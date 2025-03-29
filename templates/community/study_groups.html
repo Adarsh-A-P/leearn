@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+    <h2 class="mb-4">Study Groups</h2>
+    <div class="row">
+        <!-- Study Groups List -->
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Web Development Study Group</h5>
+                    <p class="card-text">Join us to learn and practice web development together.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-muted">10 members</span>
+                        <button class="btn btn-primary">Join Group</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more study group cards -->
+        </div>
+
+        <!-- Create Group Section -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Create New Group</h5>
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Group Name</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Subject</label>
+                            <select class="form-select">
+                                <option>Computer Science</option>
+                                <option>Engineering</option>
+                                <option>Mathematics</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Create Group</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

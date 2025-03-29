@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+    <h2 class="mb-4">Sell Products</h2>
+    <div class="row">
+        <!-- Product Form -->
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label class="form-label">Product Title</label>
+                            <input type="text" class="form-control" name="title" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <textarea class="form-control" name="description" rows="4" required></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Price (₹)</label>
+                                <input type="number" class="form-control" name="price" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Category</label>
+                                <select class="form-select" name="category" required>
+                                    <option value="">Select Category</option>
+                                    <option value="books">Books</option>
+                                    <option value="electronics">Electronics</option>
+                                    <option value="stationery">Stationery</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Product Images</label>
+                            <input type="file" class="form-control" name="images" multiple>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Condition</label>
+                            <select class="form-select" name="condition" required>
+                                <option value="">Select Condition</option>
+                                <option value="new">New</option>
+                                <option value="like_new">Like New</option>
+                                <option value="good">Good</option>
+                                <option value="fair">Fair</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">List Product</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tips Section -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Selling Tips</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">📸 Add clear, well-lit photos</li>
+                        <li class="mb-2">📝 Write detailed descriptions</li>
+                        <li class="mb-2">💰 Set competitive prices</li>
+                        <li class="mb-2">✨ Be honest about condition</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

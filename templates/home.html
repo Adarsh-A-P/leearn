@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Search Bar -->
+<div class="container py-4">
+    <form class="d-flex justify-content-center" method="GET" action="{% url 'search' %}">
+        <div class="input-group" style="max-width: 600px;">
+            <input type="text" class="form-control" name="q" placeholder="Search for products..." aria-label="Search">
+            <button class="btn btn-primary" type="submit">
+                <i class="bi bi-search"></i> Search
+            </button>
+        </div>
+    </form>
+</div>
+
+<!-- Hero Section with Video -->
+<div class="hero-section text-center py-5 bg-dark text-light">
+    <div class="container-fluid px-4" style="max-width: 900px;">
+        <!-- Text Content Section -->
+        <div class="mx-auto" style="max-width: 600px;">
+            <h1 class="display-4 text-light mb-4">Learn, Earn, and Grow Together!</h1>
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <p class="lead mb-5 text-light">Our platform aims to empower college students in Kerala by providing a dedicated marketplace where they can earn money through freelancing and buy/sell educational tools at affordable prices. By reducing the financial burden of education and fostering skill development, we strive to create a self-sustaining student economy that promotes collaborative learning, economic independence, and career growth.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Media Section -->
+        <div class="mt-5">
+            <!-- Hero Image -->
+            <div class="d-flex justify-content-center mb-4">
+                <img src="{% static 'images/hero_image.jpg' %}" alt="Student Marketplace" class="img-fluid rounded shadow" width="900" height="400">
+            </div>
+            
+            <div class="d-flex justify-content-center mb-4">
+                <video width="900" height="400" controls class="rounded shadow">
+                    <source src="{% static 'videos/intro.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        
+        <a href="{% url 'signup' %}" class="btn btn-primary btn-lg mt-4">Get Started</a>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body text-center">
+                    <h5>Students</h5>
+                    <p>Buy and sell within your college community</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body text-center">
+                    <h5>Freelancers</h5>
+                    <p>Earn by helping others in the marketplace</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body text-center">
+                    <h5>Products</h5>
+                    <p>Find everything you need for college</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body text-center">
+                    <h5>Community</h5>
+                    <p>Connect with fellow students</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Featured Products -->
+<div class="container my-5">
+    <h2 class="text-center mb-4">Featured Products</h2>
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <img src="{% static 'images/calculator.jpg' %}" class="card-img-top" alt="Calculator">
+                <div class="card-body">
+                    <h5 class="card-title">Calculator</h5>
+                    <p class="card-text">Scientific calculator for engineering students</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <img src="{% static 'images/laptop.jpg' %}" class="card-img-top" alt="Laptop">
+                <div class="card-body">
+                    <h5 class="card-title">Laptop</h5>
+                    <p class="card-text">Used laptop in excellent condition</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <img src="{% static 'images/backpack.jpg' %}" class="card-img-top" alt="Backpack">
+                <div class="card-body">
+                    <h5 class="card-title">Backpack</h5>
+                    <p class="card-text">Durable college backpack</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <img src="{% static 'images/mini_project.jpg' %}" class="card-img-top" alt="Electronics">
+                <div class="card-body">
+                    <h5 class="card-title">Arduino projects</h5>
+                    <p class="card-text">Arduino automation project</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action -->
+<div class="bg-primary text-white text-center py-5 mt-5">
+    <div class="container">
+        <h2>Ready to Start?</h2>
+        <p class="lead">Join our community and start buying or selling today!</p>
+        <a href="{% url 'signup' %}" class="btn btn-light btn-lg">Sign Up Now</a>
+        <Br>
+    </div>
+</div>
+<div>
+    <Br>
+    <Br>
+    <h1>Advertisement</h1>
+    <img src="{% static 'images/advertisement.jpg' %}" alt="Student Marketplace" class="img-fluid rounded shadow" style="max-height: 400px; width: 100%;">
+    
+</div>
+<Br>
+
+{% endblock %}
